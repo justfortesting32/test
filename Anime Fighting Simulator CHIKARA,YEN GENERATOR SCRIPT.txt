@@ -1,0 +1,40 @@
+-- UI
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Log hub", "Synapse")
+
+-- Main
+local Tab = Window:NewTab("Main")
+
+-- Player
+local Tab = Window:NewTab("Player")
+local PlayerSection = Tab:NewSection("Player")
+PlayerSection:NewSlider("Speed", "changes walkspeed", 250, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+PlayerSection:NewSlider("Jump", "changes jumppower", 250, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+
+-- Scripts
+local Tab = Window:NewTab("Scripts")
+local ScriptsSection = Tab:NewSection("Usefull Scripts")
+ScriptsSection:NewButton("InfinityYield", "loads InfinityYield", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+ScriptsSection:NewButton("SimplySpy", "loads SimplySpy", function()
+    loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+end)
+local ScriptsSection = Tab:NewSection("Murder Mystery 2")
+ScriptsSection:NewButton("Eclipse MM2", "", function()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script"),true))()
+end)
+local ScriptsSection = Tab:NewSection("Islands")
+ScriptsSection:NewButton("Islands", "", function()
+end)
+local ScriptsSection = Tab:NewSection("funky friday")
+ScriptsSection:NewButton("funky op gui", "", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoinkyPoinkie/FunkyFridayDevTools/main/Un-Obfuscated",true))()
+end)
+local ScriptsSection = Tab:NewSection("prophunt")
+ScriptsSection:NewButton("auto fame", "", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()
+end)
